@@ -1,4 +1,5 @@
 # my-vue
+<<<<<<< HEAD
 
 > vue basic learning
 
@@ -28,3 +29,6 @@ npm test
 ```
 
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+=======
+My simple Vue project learning
+>>>>>>> d62a0b4ba8b535f787ef40d6e78ea07b50028815
