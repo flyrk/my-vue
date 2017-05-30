@@ -1,12 +1,16 @@
 <template lang="html">
   <div id="todo-list">
+    <h1>ToDoList</h1>
     <input type="text"
       placeholder="Please input your task"
       v-model="newTask"
       @keyup.enter="addTask">
     <ul id="todo" v-if="tasks.length > 0">
       <p>ToDo</p>
-      <li v-for="task in tasks" @click="finishTask">{{ task }}</li>
+      <li v-for="task in tasks">
+        <span @click="finishTask">{{ task }}</span>
+        <button @click="deletedTask(task)">X</button>
+      </li>
     </ul>
     <hr v-show="isFinished">
     <ul id='finish' v-if="finishedTasks.length > 0">
@@ -35,6 +39,9 @@ export default {
       this.isFinished = true
       let startIndex = this.tasks.indexOf(event.target.innerHTML)
       this.finishedTasks.push(this.tasks.splice(startIndex, 1).toString())
+    },
+    deletedTask: function (task) {
+      this.tasks.splice(this.tasks.indexOf(task), 1)
     }
   }
 }
